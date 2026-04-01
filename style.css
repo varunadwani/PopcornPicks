@@ -1,0 +1,102 @@
+body {
+  background: #0f172a;
+  color: white;
+  font-family: Arial;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  background: #1e293b;
+  border: none;
+  color: white;
+  border-radius: 8px; 
+}
+
+.filters {
+  display: flex;
+   gap: 10px;
+}
+
+select {
+  padding: 10px;
+  background: #1e293b;
+  color: white;
+  border-radius: 6px;
+}
+
+#movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.movie {
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#details {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#details img {
+  width: 200px;
+}
+
+.watch span {
+  background: #111827;
+  padding: 5px 10px;
+  margin-right: 8px;
+  border-radius: 6px;
+}
+
+button {
+  padding: 8px 12px;
+  background: red;
+  border: none;
+  color: white;
+  border-radius: 6px;
+}
+
+/* LIGHT MODE */
+.dark {
+  background: white;
+  color: black;
+}
+
+.dark input,
+.dark select {
+  background: #eee;
+  color: black;
+}
+
+.dark .movie,
+.dark #details {
+  color: white;
+}

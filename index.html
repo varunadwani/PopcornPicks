@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PopcornPicks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+  <h1>🍿 PopcornPicks</h1>
+  <div>
+    <button id="themeToggle">Dark Mode</button>
+  </div>
+</header>
+
+<input type="text" id="searchInput" placeholder="Search movies..." />
+
+<div class="filters">
+  <select id="genre">
+    <option value="">Select Genre</option>
+  </select>
+
+  <select id="sort">
+    <option value="popularity.desc">Popularity</option>
+    <option value="vote_average.desc">Rating</option>
+    <option value="release_date.desc">Latest</option>
+  </select>
+</div>
+
+<h2>Movies</h2>
+<div id="movies"></div>
+
+<div id="details"></div>
+
+<!-- IMPORTANT ORDER -->
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
