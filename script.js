@@ -74,9 +74,34 @@ document.getElementById("sort").addEventListener("change", (e) => {
 
 // // DETAILS + WATCH OPTIONS
 
+async function showDetails(id) {
+  const res = await fetch(`${BASE}/movie/${id}?api_key=${API_KEY}`);
+  const movie = await res.json();
 
-// part to be added in the future for more details and watch options
+  const watchRes = await fetch(`${BASE}/movie/${id}/watch/providers?api_key=${API_KEY}`);
+  const watch = await watchRes.json();
 
+  const providers = watch.results.IN?.flatrate || [];
+
+  detailsDiv.innerHTML = `
+    <img src="${IMG + movie.poster_path}">
+    <div>
+      <h2>${movie.title}</h2>
+      <p>${movie.overview}</p>
+
+      <h3>Watch Options</h3>
+      <div class="watch">
+        ${providers.length
+          ? providers.map(p => `<span>${p.provider_name}</span>`).join("")
+          : "Not available in your region"}
+      </div>
+
+      <button onclick='addFav(${JSON.stringify(movie)})'>
+        Add to Favorites
+      </button>
+    </div>
+  `;
+}
 
 // FAVORITES
 function addFav(movie) {
